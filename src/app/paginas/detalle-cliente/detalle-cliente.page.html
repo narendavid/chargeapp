@@ -1,0 +1,29 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-icon name="reorder-three-outline"></ion-icon>
+        </ion-buttons>
+        <ion-title class="ion-text-center">Datos del cliente</ion-title>
+        <ion-buttons slot="end">
+            <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div *ngFor="let c of clienteU | async">
+        <ion-item>
+            Cedula: {{c.cedula}}
+        </ion-item>
+        <ion-item>
+            Nombre: {{c.nombre}}
+        </ion-item>
+        <ion-item>
+            Dirección: {{c.direccion}}
+        </ion-item>
+    </div>
+    <h2 style="text-align: center">Deudas</h2>
+    <ion-item *ngFor="let deuda of deudas | async">
+        {{deuda.monto}}
+    </ion-item>
+</ion-content>

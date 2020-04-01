@@ -1,0 +1,7 @@
+{
+  "name": "chargeapp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

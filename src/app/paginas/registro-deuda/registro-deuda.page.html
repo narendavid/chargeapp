@@ -1,0 +1,44 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-icon name="reorder-three-outline"></ion-icon>
+        </ion-buttons>
+        <ion-title class="ion-text-center">Realizar prestamo</ion-title>
+        <ion-buttons slot="end">
+            <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-item>
+        <ion-input [(ngModel)]="cedulaCliente" type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label position="floating">Monto</ion-label>
+        <ion-input [(ngModel)]="deuda.monto" type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label>Periodo</ion-label>
+        <ion-select [(ngModel)]="deuda.periodo" okText="Ok" cancelText="Borrar">
+            <ion-select-option value="diario">Diario</ion-select-option>
+            <ion-select-option value="semanal">Semanal</ion-select-option>
+            <ion-select-option value="quincenal">Quincenal</ion-select-option>
+            <ion-select-option value="mensual">Mensual</ion-select-option>
+        </ion-select>
+    </ion-item>
+    <ion-item>
+        <ion-label position="floating">Cuotas</ion-label>
+        <ion-input [(ngModel)]="cuotas" type="number"></ion-input>
+    </ion-item>
+    <ion-button (click)="calcularCuotas()" expand="block">Calcular</ion-button>
+    <div *ngIf="bandera">
+        <ion-item>
+            {{cuotas}} cuotas de {{cuotasFijas.cantidad | currency}}
+        </ion-item>
+        <ion-item>
+            Para un total de {{total | currency}}
+        </ion-item>
+        <ion-button (click)="registrarDeuda()" expand="block">Confirmar prestamo</ion-button>
+    </div>
+</ion-content>

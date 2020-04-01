@@ -1,0 +1,30 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-icon name="reorder-three-outline"></ion-icon>
+        </ion-buttons>
+        <ion-title class="ion-text-center">Registrar cliente</ion-title>
+        <ion-buttons slot="end">
+            <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-item>
+        <ion-label position="floating">Cédula</ion-label>
+        <ion-input [(ngModel)]="clienteNuevo.cedula" type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label position="floating">Nombre</ion-label>
+        <ion-input [(ngModel)]="clienteNuevo.nombre"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label position="floating">Teléfono</ion-label>
+        <ion-input [(ngModel)]="clienteNuevo.telefono" type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-textarea [(ngModel)]="clienteNuevo.direccion" placeholder="Escriba dirección aquí..."></ion-textarea>
+    </ion-item>
+    <ion-button (click)="registrarCliente()" expand="block">Registrar</ion-button>
+</ion-content>
