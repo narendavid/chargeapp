@@ -13,7 +13,12 @@
 <ion-content>
     <div *ngFor="let c of clienteU | async">
         <ion-item>
-            Cedula: {{c.cedula}}
+            <div>
+                CC: {{c.cedula}}
+            </div>
+            <div slot="end">
+                Tel: {{c.telefono}}
+            </div>
         </ion-item>
         <ion-item>
             Nombre: {{c.nombre}}
